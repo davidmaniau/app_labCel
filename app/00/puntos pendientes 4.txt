@@ -1,0 +1,13 @@
+
+
+
+4.	Modulo cuentas por cobrar con recibo
+•	Selector fecha
+•	Contenido de la parte de arriba que sume las cantidades (Solo Aparezca: Total del Monto de todas las ventas, abonos, y saldo pendiente)
+•	Que al seleccionar una fecha(Mes) cambie el contenido de la parte de arriba
+
+
+
+
+
+

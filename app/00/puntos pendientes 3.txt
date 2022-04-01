@@ -1,0 +1,10 @@
+
+
+
+
+
+3.	Modulo Ventas con Factura
+•	Selector fecha
+•	Contenido de la parte de arriba que sume las cantidades (Solo Aparezca: subtotal, Impuesto (ISV), Total( subtotal+impuesto), abonos, y saldo pendiente)
+•	Que al seleccionar una fecha(Mes) cambie el contenido de la parte de arriba
+

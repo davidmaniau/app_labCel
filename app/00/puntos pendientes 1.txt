@@ -1,0 +1,398 @@
+Puntos Faltantes
+1.	Modulo Gastos
+•	Selector fecha
+•	Contenido de la parte de arriba que sume las cantidades
+•	Que al seleccionar una fecha(Mes) cambie el contenido de la parte de arriba
+
+
+este fragmento nos permite crear un selector (ejemplo es una lista de empleados)
+claro esta que empleado es un ejemplo y si modificamos la consulta * from utlizar_otr_tabla
+la ventaja es que este fragmento nos garantiza que al seleccionar un elemento de la lista
+esto provoca que la pagina se refresco (perderia la seleccion actual ... en select) sin embargo
+en este fragmento tenemos una validacion el momento que se van cargando los items al select
+y esta validacion lo que hace es asignar el atributo selected al item que coinciada su value con el de
+la variable que se esta pasando por get
+
+
+selector de rango de fecha
+html
+
+
+
+
+ <!-- CONTROL O SELECTOR DE FECHAS -->
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right col-sm-8" id="reservation" name="date_range" value="<?php echo (isset($_GET['range'])) ? $_GET['range'] : $range_from . ' - ' . $range_to; ?>">
+                </div>
+
+
+javascript
+
+
+    $("#reservation").on('change', function() {
+      var range = encodeURI($(this).val());
+      window.location = '01index.php?range=' + range;
+    });
+
+
+
+
+
+
+HTML con php
+#################################################################################################
+
+      <?php
+                if (isset($_GET['gasto']))
+                  {   $gasto1 = $_GET['gasto'];    ?>
+                <label for="listar" class=" control-label">Gastos</label>
+                <div>
+                  <select class="form-control" name="gasto" id="listar" required>
+                    <option value="" selected>- Seleccionar -</option>
+                    <?php
+                    $sqln2 = "SELECT * FROM gasto_tipo";
+                    $queryn2 = $conn->query($sqln2);
+                    while ($prown2 = $queryn2->fetch_assoc()) {
+                     if ($prown2['id'] == $gasto1) {
+                      echo "<option value='" . $prown2['id'] . "' selected >" . $prown2['descripcion'] . "</option>";
+                    }else{
+                     echo "<option value='" . $prown2['id'] . "'  >" . $prown2['descripcion'] . "</option>";
+                   }
+                 }
+                 ?>
+               </select>
+             </div>
+           <?php } else{ ?>
+
+            <label for="listar" class=" control-label">Gastos</label>
+            <div>
+              <select class="form-control" name="gasto" id="listar" required>
+                <option value="" selected>- Seleccionar -</option>
+                <?php
+                $sqln2 = "SELECT * FROM gasto_tipo";
+                $queryn2 = $conn->query($sqln2);
+                while ($prown2 = $queryn2->fetch_assoc()) {
+                 echo "<option value='" . $prown2['id'] . "'  >" . $prown2['descripcion'] . "</option>";
+               }
+               ?>
+             </select>
+           </div>
+
+         <?php } ?>
+
+
+###################################################################################
+
+pero para que funcione nosotros debemos agregar una funcion al final de nuestro modulo(index.php )
+en la seccion de scripts (javascript)
+
+RECORDAR QUE ESTA FUNCION SOLO VA A SER UTIL SI SE RELACIONA EL ID DEL SELECT (EN EL HTML ..... select con id=listar) Y SE UTILIZA
+EL MISMO NOMBRE PARA LA FUNCION EN JAVASCRIPT (#listar)
+
+##############################################################################
+
+    $("#listar").on('change', function() {
+      var zona = encodeURI($(this).val());
+      if(zona==""){
+        window.location = '01index.php';
+      }
+      else{
+        window.location = '01index.php?t=' + zona;
+      }
+
+    });
+
+####################################################################################
+
+CINTA DE RESUMEN ESTADISTICO .....
+
+
+<div class="row">
+
+  <div class="col-sm-2 col-3">
+    <div class="description-block border-right">
+      <!-- <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span> -->
+      <h5 class="description-header text-success"><!-- L. --> <?php //echo number_format($salario_quincenal,2) ; ?></h5>
+      <span class="description-text"><strong> <!-- SALARIO QUINCENAL --></strong></span>
+    </div>
+    <!-- /.description-block -->
+  </div>
+  <!-- /.col -->
+
+
+
+
+  <div class="col-sm-2 col-3">
+    <div class="description-block border-right">
+      <!-- <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span> -->
+      <h5 class="description-header text-success"><!-- L. --> <?php //echo number_format($salario_quincenal,2) ; ?></h5>
+      <span class="description-text"><strong> <!-- SALARIO QUINCENAL --></strong></span>
+    </div>
+    <!-- /.description-block -->
+  </div>
+  <!-- /.col -->
+
+
+
+
+  <div class="col-sm-2 col-3">
+    <div class="description-block border-right">
+      <!-- <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span> -->
+      <h5 class="description-header text-success"><!-- L. --> <?php //echo number_format($salario_quincenal,2) ; ?></h5>
+      <span class="description-text"><strong> <!-- SALARIO QUINCENAL --></strong></span>
+    </div>
+    <!-- /.description-block -->
+  </div>
+  <!-- /.col -->
+
+
+
+  <div class="col-sm-2 col-3">
+    <div class="description-block border-right">
+      <!-- <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span> -->
+      <h5 class="description-header text-success"><!-- L. --> <?php //echo number_format($salario_quincenal,2) ; ?></h5>
+      <span class="description-text"><strong> <!-- SALARIO QUINCENAL --></strong></span>
+    </div>
+    <!-- /.description-block -->
+  </div>
+  <!-- /.col -->
+
+
+
+  <div class="col-sm-2 col-3">
+    <div class="description-block border-right">
+      <!-- <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span> -->
+      <h5 class="description-header text-success"><!-- L. --> <?php //echo number_format($salario_quincenal,2) ; ?></h5>
+      <span class="description-text"><strong> <!-- SALARIO QUINCENAL --></strong></span>
+    </div>
+    <!-- /.description-block -->
+  </div>
+  <!-- /.col -->
+
+<?php
+
+                    $to = date('Y-m-d');//inicio se la fecha actual
+                   // $from = date('Y-m-d', strtotime('-15 day', strtotime($to)));
+                    $from = date('Y-m-d');//final del rango sea la fecha actual
+
+                    if (isset($_GET['range'])) {
+                      $range = $_GET['range'];
+                      $ex = explode(' - ', $range);
+                      $from = date('Y-m-d', strtotime($ex[0]));
+                      $to = date('Y-m-d', strtotime($ex[1]));
+                    }
+
+                    if (isset($_GET['gasto'])) {
+                      $tipo_gasto = $_GET['gasto'];
+      //toda la data a mostrar en la tabla de registros previamente guardados
+                      $sql = "SELECT sum(monto) as totalSuma
+                      FROM ".$tabla."
+                      left join proveedor on proveedor.id = ".$tabla.".proveedor_id
+                      left join gasto_tipo on gasto_tipo.id = ".$tabla.".gasto_tipo_id
+                      where ".$tabla.".estado_registro = '1' and ".$tabla.".gasto_tipo_id = '$tipo_gasto' and fecha between '$from' AND '$to' ";
+                       //echo $sql.' _ CON parametros get';
+                    }
+                    else{
+//toda la data a mostrar en la tabla de registros previamente guardados
+                      $sql = "SELECT sum(monto) as totalSuma
+                      FROM ".$tabla."
+                      left join proveedor on proveedor.id = ".$tabla.".proveedor_id
+                      left join gasto_tipo on gasto_tipo.id = ".$tabla.".gasto_tipo_id
+                      where ".$tabla.".estado_registro = '1' and fecha between '$from' AND '$to' ";
+                      //echo $sql.' _ sin parametros get';
+                    }
+
+                    $EJECUTAR = $conn->query($sql);
+        $RESPUESTA = $EJECUTAR->fetch_assoc();
+        $totalSuma =  $RESPUESTA['totalSuma'];
+
+
+
+                      ?>
+
+<div class="col-sm-2 col-3">
+  <div class="description-block">
+
+    <h6 class="description-header text-success">L. <?php echo number_format($totalSuma,2) ; ?></h6>
+    <span class="description-text"><strong>= TOTAL GASTOS</strong></span>
+  </div>
+  <!-- /.description-block -->
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+ESTE PUNTO ESTA LISTO PARA SU REVISION
+COMENTARIOS FAVOR ESCRIBIRLOS EN ESTA LINEA.................
+
+
+
+
+
+
+
+2.	Modulo Ventas con recibo
+•	Selector fecha
+•	Contenido de la parte de arriba que sume las cantidades (Solo Aparezca: Total del Monto de todas las ventas, abonos, y saldo pendiente)
+•	Que al seleccionar una fecha(Mes) cambie el contenido de la parte de arriba
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.	Modulo Ventas con Factura
+•	Selector fecha
+•	Contenido de la parte de arriba que sume las cantidades (Solo Aparezca: subtotal, Impuesto (ISV), Total( subtotal+impuesto), abonos, y saldo pendiente)
+•	Que al seleccionar una fecha(Mes) cambie el contenido de la parte de arriba
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.	Modulo cuentas por cobrar con recibo
+•	Selector fecha
+•	Contenido de la parte de arriba que sume las cantidades (Solo Aparezca: Total del Monto de todas las ventas, abonos, y saldo pendiente)
+•	Que al seleccionar una fecha(Mes) cambie el contenido de la parte de arriba
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.	Modulo cuentas por cobrar con Factura
+•	Selector fecha
+•	Contenido de la parte de arriba que sume las cantidades (Solo Aparezca: subtotal, Impuesto (ISV), Total( subtotal+impuesto), abonos, y saldo pendiente)
+•	Que al seleccionar una fecha(Mes) cambie el contenido de la parte de arriba
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.	Modulo Planilla
+•	Selector fecha
+•	Que al seleccionar una fecha(mes de primera o segunda) cambie el contenido de la parte de arriba de cada empleado
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.	Validación de usuarios al sistema
+•	Solo los administradores tendrá acceso a todo el sistema.
+•	Los empleados solo tendrán acceso a ventas, cuentas por cobrar, gastos, clientes Y proveedores.
+
+8.	Modulo asistencias
+•	Selector fecha
+•	Contenido de la parte de arriba que sume las cantidades ( que aparezca total de horas extra, total de horas tarde, pago por hora de cada empleado y total a pagar(horas extra*pago por hora)
+•	Que al seleccionar una fecha(Mes) cambie el contenido de la parte de arriba de cada empleado.
+•	Campo de comentario en el login para asi saber porque hizo horas extras, las horas extra comienzan de las 5 pm en adelante
+	Botones de editar entra y editar salida no funcionan
+	El botón eliminar tampoco funciona
+	Agregar campo de comentario cuando hayan horas extras(para asi llevar hacer el reporte.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Al agregar una entrada o salida no funciona, no agrega
+
+
+
+
+
+
+
+
+
+
+
+
+*Importante en modulos asistencia hay trabajadores que trabajar hasta la madrugada después de las 12, esa parte parece que no la cuenta como horas extra.
+
+
+*Login tiene que aparecer un comentario cuando uno hace horas extra para saber que se hizo ese dia
+9.	Modulo Reportes
+•	Crear reportes para los modulos: Gastos, ventas(Recibo y Factura), Planilla por cada usuario de cada quincena y de asistencias, que en cada reporte de cada modulo haga la suma total del mes ejemplo en Gastos, ventas(Recibo y Factura), y en asistencias igual un reporte con la suma de las horas extras y que multiplique esas horas extra por el pago por hora de cada empleado y que aparezca el comentario de las horas extras diarias que se hicieron al mes tomada, en planilla seria el reporte de cada quincena de cada empleado.
+•	Agregar el selector de fecha para asi buscar los reportes de cada mes.
+
+*Eliminar código que no se este utilizando en el proyecto
+*Cambiar la apariencia del sistema (colores el interfaz, botones, tablas o campos de los modulos)
+
+
+
+

@@ -1,0 +1,72 @@
+        SELECTOR DE FECHA Y CINTA CON ESTADISTICA EN LA PARTE SUPERIOR DE LA PAGINA
+
+ and ".$tabla.".fecha between '$from' AND '$to'
+
+
+
+        <?php //echo $sql;
+        $range_to = date('m/d/Y');
+        $range_from = date('m/d/Y');
+        ?>
+        <!-- CONTROL O SELECTOR DE FECHAS -->
+        <div class="input-group">
+        <div class="input-group-addon">
+        <i class="fa fa-calendar"></i>
+        </div>
+        <input type="text" class="form-control pull-right col-sm-8" id="reservation" name="date_range" value="<?php echo (isset($_GET['range'])) ? $_GET['range'] : $range_from . ' - ' . $range_to; ?>">
+        </div>
+
+        <?php include '02index_estadisticas.php'; ?>
+
+
+
+    $("#reservation").on('change', function() {
+      var range = encodeURI($(this).val());
+      window.location = '01index.php?range=' + range;
+    });
+
+
+
+
+
+        ANTES  DEL WHILE QUE ALIMENTA A LA TABLA DEL INDEX
+
+
+        <?php
+
+        $to = date('Y-m-d');//inicio se la fecha actual
+        // $from = date('Y-m-d', strtotime('-15 day', strtotime($to)));
+        $from = date('Y-m-d');//final del rango sea la fecha actual
+
+        if (isset($_GET['range'])) {
+        $range = $_GET['range'];
+        $ex = explode(' - ', $range);
+        $from = date('Y-m-d', strtotime($ex[0]));
+        $to = date('Y-m-d', strtotime($ex[1]));
+
+        $sql = " consulta que se econtraba en 00configuraciones agregando los parametros de fechas en el where de la misma ";
+
+
+        //echo $sql.'   SQL1' ;
+        }
+
+        else{
+
+        $sql = " consulta que se econtraba en 00configuraciones agregando los parametros de fechas en el where de la misma ";
+
+
+        //echo $sql.'   SQL2' ;
+        }
+
+
+        //toda la data a mostrar en la tabla de registros previamente guardados
+        $query = $conn->query($sql);
+
+
+
+        while($row = $query->fetch_assoc()){
+
+
+
+
+        ?>

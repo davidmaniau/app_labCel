@@ -1,0 +1,57 @@
+
+
+
+
+
+6.	Modulo Planilla
+•	Selector fecha
+•	Que al seleccionar una fecha(mes de primera o segunda) cambie el contenido de la parte de arriba de cada empleado
+
+
+
+
+7.	Validación de usuarios al sistema
+•	Solo los administradores tendrá acceso a todo el sistema.
+•	Los empleados solo tendrán acceso a ventas, cuentas por cobrar, gastos, clientes Y proveedores.
+
+
+
+8.	Modulo asistencias
+•	Selector fecha
+•	Contenido de la parte de arriba que sume las cantidades ( que aparezca total de horas extra, total de horas tarde, pago por hora de cada empleado y total a pagar(horas extra*pago por hora)
+•	Que al seleccionar una fecha(Mes) cambie el contenido de la parte de arriba de cada empleado.
+•	Campo de comentario en el login para asi saber porque hizo horas extras, las horas extra comienzan de las 5 pm en adelante
+	Botones de editar entra y editar salida no funcionan
+	El botón eliminar tampoco funciona
+	Agregar campo de comentario cuando hayan horas extras(para asi llevar hacer el reporte.
+
+
+
+
+
+
+
+
+
+
+
+
+	Al agregar una entrada o salida no funciona, no agrega
+
+
+
+
+*Importante en modulos asistencia hay trabajadores que trabajar hasta la madrugada después de las 12, esa parte parece que no la cuenta como horas extra.
+
+
+*Login tiene que aparecer un comentario cuando uno hace horas extra para saber que se hizo ese dia
+9.	Modulo Reportes
+•	Crear reportes para los modulos: Gastos, ventas(Recibo y Factura), Planilla por cada usuario de cada quincena y de asistencias, que en cada reporte de cada modulo haga la suma total del mes ejemplo en Gastos, ventas(Recibo y Factura), y en asistencias igual un reporte con la suma de las horas extras y que multiplique esas horas extra por el pago por hora de cada empleado y que aparezca el comentario de las horas extras diarias que se hicieron al mes tomada, en planilla seria el reporte de cada quincena de cada empleado.
+•	Agregar el selector de fecha para asi buscar los reportes de cada mes.
+
+*Eliminar código que no se este utilizando en el proyecto
+*Cambiar la apariencia del sistema (colores el interfaz, botones, tablas o campos de los modulos)
+
+
+
+

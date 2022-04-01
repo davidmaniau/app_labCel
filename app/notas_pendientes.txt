@@ -1,0 +1,189 @@
+ 
+
+ Módulo planilla Observaciones pendientes 
+
+ Datos:
+ - Modulo adelant funciona bien.
+ 
+ - Modulo dias Faltados aparece en el modulo deducciones, dias faltados el comentario deberia de aparecer
+ en el campo observaciones.
+
+ - Falta el modulo deducciones y tiene que haber el campo de observacion para hacer la descripcion de porque
+ se le dedujo, igual que aparezca la observacion en la planilla.
+
+otros Datos:
+ 
+ 1. En los campos tendrian que aparecer:
+ 
+ - Fecha: La fechas solo tendria que aparecer cada quincena 
+ 
+ - Saldo Diario: solo deberia aparecer cada quincena
+ 
+ - Anticipos: el anticipo es una resta.
+ 
+ - dias faltados: es una resta y el comentario deberia de aparecer en observaciones.
+
+ - deducciones: es una resta pero se relaciona con las observaciones para describir porque se le hizo la deduccion
+ 
+ - dias dobles: se le suma a la quincena ese dia que trabajo, ejemplo si el dia le sale a 200, el dia doble tambien seria 200 para que hagan una suma de 400
+ 
+ - observaciones: este campo se relaciona con deducciones para describir porque se le hizo la dediccion.
+
+ 2. se tendria que hacer el modulo de dia doble para añadirlo a la planilla.
+
+ 3. El modulo planilla solo tiene que aparecer las fechas de cada quincena, a modo que se le agregue un combobox
+ para manipular las fechas.
+
+Importante no se si se podria:
+4. Me gustaria que en la parte de arriba apareciera los datos de cuanto saco de anticipo, dias faltados, deducciones y el dia doble, para que refleje cuanto le toca de la quincena asi como lo hizo con recibo y factura que aparecia la sumas en la parte de arriba.
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Planilla
+
+1. No refleja los días faltados los dias fltados ??? una cantidad de dias??' en que parte de la ventana tendria que ser  ---- lo que agregue son en d'
+
+lo tengo al reves lo d deduccione son dias faltados y deducciones son otros tipos pero debo conultarle a fernanda para mejorar ese punto
+
+
+2. No refleja las observaciones. cierto solo falta mandarlo a llamar a la base de datos esto va ligado al putno anterior a este mismo
+
+ Otros
+
+1. Módulo proformas está igual como el módulo de facturas
+cierto unaa vezz completo modulo factura  podre tener listo este punto
+
+2. Cuentas por cobrar y reportes no hay nada en esos módulos da error
+reporte solo mostrara contenido
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Notas:
+
+ Módulo usuarios 
+
+1. No puedo agregar usuarios. (resuelto)
+
+2. No puedo modificar. (resuelto)
+
+3. No hay campo donde aparezca la contraseña. - este campo no estara disponible en la opcion editar ..... hay un boton llamado Nueva contraseña ---- (listo)
+
+ 
+
+
+ Módulo asistencias
+
+1. No puedo agregar nueva asistencia ya dentro del sistema.
+2. No funciona el botón editar entrada, editar salida ni el botón eliminar.
+ Módulo ventas recibo
+
+ Modulo recibo
+ 
+1.No hace bien el cálculo  de la conversión en cm, m, pie para convertir a pulgadas esa medida, ya que la empresa trabaja en pulgadas.
+
+
+
+2. El botón pagar no sirve. - estoy trabajando en la funcion abonar (en esencia sera pagar)
+
+
+Módulo Factura
+
+1. No sirve el botón pagar.  - estoy trabajando en la funcion abonar (en esencia sera pagar)
+ 
+
+2. No funciona botón eliminar ya dentro del detalle de factura. 
+
+3. No está el campo forma de pago. ???? este no lo entendi
+
+ 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ Fernanda Honduras: Módulo Recibo
+
+Al entrar al detalle del producto y llenar toda la información, al regresar a venta recibo no me aparece el monto, ni saldo pendiente.
+CONULTAR A FERNANDA
+
+ Módulo Factura
+Al ingresar toda la información, no me aparece en ventas Factura. (el tipo de venta es contado o credito???)
+
+ Módulo Planilla
+
+Faltaría un módulo de Día doble, que significa que se le sumaria ese día a la planilla, por ejemplo si al día se le paga 200, el día doble sería de 200 igual.
+
+En la planilla solo se tendría que reflejar cada 15 días.
+
+ Módulo de días falto
+Que no aparezca el comentario, sino que de una vez se le deduzca ese día.
+
+Los días faltados no se reflejan en el campo correspondiente.
+
+Faltaría el módulo deducciones y a ese módulo si se le tendría que agregar un comentario para que aparezca en las observaciones
+ Fernanda Honduras: Módulos cuentas por cobrar factura y recibo, aparecen ventas que  son al contado y solo tendrían que aparecer los que son al crédito, y que una vez cancelado todo deje de aparecer en las cuentas por cobrar
+ Fernanda Honduras: Organice los módulos ya lo subí a Github
+ Fernanda Honduras: Danilo esta trabajando en los reporte
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+Modulo Recibo y Factura
+
+Hay un error en el calculo de todas las conversiones menos la de conversion a pulgadas, el problema es que al volver a revisar el producto la conversion de area pulgs da otro Dato.   Imagen recien ingresado el producto hace ese calculo bien,
+
+
+
+Al darle editar el valor es otro, lo demas lo hace bien solo ese ese detalle en Recibo y factura
+
+
+En facturas al ingrese una nueva venta me aparecen los detalles de la venta anterior
+
+
+Botón eliminar de Factura no funciona
+
+al darle boton regresar aparece en cero todo
